@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.ReportView" Title="Report">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Entry Placeholder="Report name"
+                   Text="{Binding Name}"
+                   Margin="4" />
+
+            <Entry Placeholder="Register number"
+                   Text="{Binding RegisterNumber}"
+                   Margin="4" />
+
+            <Label Margin="4" FontSize="18" Text="Release Year:" />
+            <Entry Text="{Binding ReleaseYear}"
+                     Margin="4" />
+
+            <Label Margin="4" FontSize="18" Text="Page Count:" />
+            <Entry Text="{Binding PageCount}"
+                     Margin="4" />
+
+            <Button Text="Add" Command="{Binding UpdateCommand}" Clicked="btnAddReport_Click"></Button>
+            <Button Text="Cancel" Command="{Binding CancelCommand}" Clicked="btnEditReport_Click"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

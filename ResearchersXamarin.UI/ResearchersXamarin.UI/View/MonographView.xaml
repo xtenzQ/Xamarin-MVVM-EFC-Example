@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.MonographView" Title="Monograph">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Entry Placeholder="Monograph name"
+                   Text="{Binding Name}"
+                   Margin="4" />
+
+            <Entry Placeholder="Coauthor last name"
+                   Text="{Binding CoauthorLastName}"
+                   Margin="4" />
+
+            <Entry Placeholder="Coauthor first name"
+                   Text="{Binding CoauthorFirstName}"
+                   Margin="4" />
+
+            <Entry Placeholder="Coauthor middle name"
+                   Text="{Binding CoauthorMiddleName}"
+                   Margin="4" />
+
+            <Entry Placeholder="Release date" Text="{Binding ReleaseDate}" Margin="4" />
+
+            <Entry Text="{Binding PageCount}" Margin="4" />
+
+
+            <Button Text="Add" Command="{Binding UpdateCommand}" Clicked="btnAddMonograph_Click"></Button>
+            <Button Text="Cancel" Command="{Binding CancelCommand}" Clicked="btnEditMonograph_Click"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ResearchersXamarin.UI"        
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:view="clr-namespace:ResearchersXamarin.UI.View"
+             x:Class="ResearchersXamarin.UI.MainPage">
+    <TabbedPage.Children>
+        <NavigationPage Title="Researcher" Icon="../Resources/researcher.png">
+            <x:Arguments>
+                <view:ResearcherListView />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Article" Icon="../Resources/article.png">
+            <x:Arguments>
+                <view:ArticleListView />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Monograph" Icon="../Resources/monograph.png">
+            <x:Arguments>
+                <view:MonographListView />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Presentation" Icon="../Resources/presentation.png">
+            <x:Arguments>
+                <view:PresentationListView />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Report" Icon="../Resources/report.png">
+            <x:Arguments>
+                <view:ReportListView />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Request" Icon="../Resources/request.png">
+            <x:Arguments>
+                <view:RequestView />
+            </x:Arguments>
+        </NavigationPage>
+        
+        
+    </TabbedPage.Children>
+</TabbedPage>

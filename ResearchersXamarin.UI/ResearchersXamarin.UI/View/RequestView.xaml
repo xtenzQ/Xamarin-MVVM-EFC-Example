@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.RequestView" Title="Request">
+    <ContentPage.Content>
+      <StackLayout>
+          <Label Margin="4" Text="Count the number of conferences before the date entered below:" />
+          <DatePicker Date="{Binding MyDate}" Margin="4" />
+            <Button Command="{Binding GetPresentationsCommand}" Text="Find"/>
+            <Label Text="{Binding Presentations, StringFormat='Total count: {0}'}" Margin="4" />
+          <Label Text="Count the number of pages of the department entered below" Margin="4"/>
+          <Entry Text="{Binding Department}" Placeholder="Number" />
+            <Button Command="{Binding GetReportsCommand}" Text="Find"/>
+          <Label Text="{Binding Reports, StringFormat='Total count: {0}'}" Margin="4" />
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.MonographListView"
+             Title="Monographs">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Order="Primary" Icon="img/refresh.png"  Command="{Binding RefreshCommand}" />
+        <ToolbarItem Text="Add" Order="Primary" Icon="img/add_monograph.png" Command="{Binding ShowAddCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding MonographList}" 
+                  HasUnevenRows="True"
+                  SeparatorVisibility="Default">
+                <ListView.Header>
+                    <Grid VerticalOptions="Center" BackgroundColor="LightGray" Padding="10" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="52" />
+                            <ColumnDefinition Width="52"/>
+                        </Grid.ColumnDefinitions>
+                        <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Name" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="1" Text="Coauthor last name" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="2" Text="Coauthor first name" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="3" Text="Coauthor middle name" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="4" Text="Release date" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="5" Text="Page count" FontAttributes="Bold" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White"
+                              Margin="5"
+                              Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="52" />
+                                    <ColumnDefinition Width="52"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Name}" />
+                                <Label Grid.Column="1" Text="{Binding CoauthorLastName}" />
+                                <Label Grid.Column="2" Text="{Binding CoauthorFirstName}" />
+                                <Label Grid.Column="3" Text="{Binding CoauthorMiddleName}" />
+                                <Label Grid.Column="4" Text="{Binding ReleaseDate}" />
+                                <Label Grid.Column="5" Text="{Binding PageCount}" />
+                                <Button Grid.Column="6" x:Name="btnEditResearcher" Image="img/edit.png" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding ShowEditCommand}" />
+                                <Button Grid.Column="7" x:Name="btnDeleteResearcher" Image="img/delete.png" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding DeleteCommand}"/>
+
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

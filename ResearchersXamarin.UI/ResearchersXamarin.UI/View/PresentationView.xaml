@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.PresentationView" Title="Presentation">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Entry Placeholder="Presentation name"
+                   Text="{Binding Name}"
+                   Margin="4" />
+
+            <Entry Placeholder="Conference name"
+                   Text="{Binding ConferenceName}"
+                   Margin="4" />
+
+            <Label Margin="4" FontSize="18" Text="Presentation Date:" />
+            <DatePicker Date="{Binding PresentationDate}" Margin="4" />
+
+            <Button Text="Add" Command="{Binding UpdateCommand}" Clicked="btnAddPresentation_Click"></Button>
+            <Button Text="Cancel" Command="{Binding CancelCommand}" Clicked="btnEditPresentation_Click"></Button>
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.ReportListView"
+             Title="Reports">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh" Order="Primary" Icon="img/refresh.png"  Command="{Binding RefreshCommand}" />
+        <ToolbarItem Text="Add" Order="Primary" Icon="img/add_report.png" Command="{Binding ShowAddCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding ReportList}" 
+                  HasUnevenRows="True"
+                  SeparatorVisibility="Default">
+                <ListView.Header>
+                    <Grid VerticalOptions="Center" BackgroundColor="LightGray" Padding="10" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="52" />
+                            <ColumnDefinition Width="52"/>
+                        </Grid.ColumnDefinitions>
+                        <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Name" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="1" Text="Register number" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="2" Text="Release year" FontAttributes="Bold" />
+                        <Label VerticalTextAlignment="Center" Grid.Column="3" Text="Page count" FontAttributes="Bold" />
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="White"
+                              Margin="5"
+                              Padding="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="52" />
+                                    <ColumnDefinition Width="52"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Name}" />
+                                <Label Grid.Column="1" Text="{Binding RegisterNumber}" />
+                                <Label Grid.Column="2" Text="{Binding ReleaseYear}" />
+                                <Label Grid.Column="3" Text="{Binding PageCount}" />
+                                <Button Grid.Column="4" x:Name="btnEditPresentation" Image="img/edit.png" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding ShowEditCommand}" />
+                                <Button Grid.Column="5" x:Name="btnDeletePresentation" Image="img/delete.png" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding DeleteCommand}"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

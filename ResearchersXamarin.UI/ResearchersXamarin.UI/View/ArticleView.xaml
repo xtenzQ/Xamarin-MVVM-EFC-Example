@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.ArticleView" Title="Article">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <Entry Placeholder="Article name"
+                   Text="{Binding Name}"
+                   Margin="4" />
+
+            <Entry Placeholder="Magazine name"
+                   Text="{Binding MagazineName}"
+                   Margin="4" />
+
+            <Label Margin="4" FontSize="18" Text="Release Year:" />
+            <DatePicker Date="{Binding ReleaseDate}"
+                        Margin="4" />
+
+            <Button Text="Add" Command="{Binding UpdateCommand}" Clicked="AddButton_Clicked"></Button>
+            <Button Text="Cancel" Command="{Binding CancelCommand}" Clicked="CancelButton_Clicked"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ResearchersXamarin.UI.View.ResearcherView" Title="R">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save"
+                     Icon="ic_save.png"
+                     Command="{Binding SaveResearcherCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        
+        <StackLayout>
+
+            <Label FontSize="18" Text="{Binding Researcher, StringFormat='New article for: {0}'}"
+                   Margin="4,12,4,4" />
+
+            <Entry Placeholder="Last name"
+                   Text="{Binding LastName}"
+                   Margin="4" />
+
+            <Entry Placeholder="First name"
+                   Text="{Binding FirstName}"
+                   Margin="4" />
+
+            <Entry Placeholder="Middle name"
+                   Text="{Binding MiddleName}"
+                   Margin="4" />
+
+            <Entry Placeholder="Department number"
+                   Text="{Binding DepartmentNumber}"
+                   Margin="4" />
+
+            <Entry Placeholder="Age"
+                   Text="{Binding Age}"
+                   Margin="4" />
+
+            <Label Margin="4" FontSize="18" Text="Academic Degree" />
+            <Picker SelectedItem="{Binding AcademicDegree}" Margin="4">
+                <Picker.Items>
+                    <x:String>Associate's Degree</x:String>
+                    <x:String>Bachelor's Degree</x:String>
+                    <x:String>Graduate Degree</x:String>
+                    <x:String>Master's Degree</x:String>
+                    <x:String>Doctoral Degree</x:String>
+                </Picker.Items>
+            </Picker>
+
+
+            <Entry Placeholder="Position"
+                   Text="{Binding Position}"
+                   Margin="4" />
+
+            <Button Text="Add" Command="{Binding UpdateCommand}" Clicked="AddButton_Clicked"></Button>
+            <Button Text="Cancel" Command="{Binding CancelCommand}" Clicked="CancelButton_Clicked"></Button>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

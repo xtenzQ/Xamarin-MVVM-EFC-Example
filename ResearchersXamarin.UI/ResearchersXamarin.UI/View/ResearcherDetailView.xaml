@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:view="clr-namespace:ResearchersXamarin.UI.View;assembly=ResearchersXamarin.UI"
+             x:Class="ResearchersXamarin.UI.View.ResearcherDetailView"
+             Title="{Binding RName}">
+  <!--Pages can be added as references or inline-->
+
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Text="Back" Icon="img/back.png"  Order="Primary" Clicked="MenuItem_OnClicked" />
+    </TabbedPage.ToolbarItems>
+    <TabbedPage.Children>
+        <NavigationPage TitleIcon="img/article.png" Title="Article">
+            <x:Arguments>
+                <view:ArticleListView/>
+          </x:Arguments>
+      </NavigationPage>
+        <NavigationPage Title="Monograph" Icon="img/monograph.png">
+          <x:Arguments>
+              <view:MonographListView/>
+          </x:Arguments>
+      </NavigationPage>
+        <NavigationPage Title="Presentation" Icon="Assets/presentation.png">
+          <x:Arguments>
+                <view:PresentationListView/>
+          </x:Arguments>
+      </NavigationPage>
+        <NavigationPage Title="Report" Icon="Assets/report.png">
+          <x:Arguments>
+                <view:ReportListView/>
+          </x:Arguments>
+      </NavigationPage>
+        <NavigationPage Title="Request" Icon="Assets/request.png">
+            <x:Arguments>
+                <view:RequestView/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

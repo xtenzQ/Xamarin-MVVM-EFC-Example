@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:io="clr-namespace:System.IO;assembly=netstandard"
+             x:Class="ResearchersXamarin.UI.View.ResearcherListView"
+             Title="Researchers">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddResearcher" Icon="img/add_researcher.png" Order="Primary" Command="{Binding ShowAddCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding ResearcherList}" 
+                  SelectedItem="{Binding SelectedResearcher}"
+                  ItemTapped="ListView_OnItemTapped"             
+                  HasUnevenRows="True"
+                  SeparatorVisibility="Default">
+            <ListView.Header>
+                <Grid VerticalOptions="Center" BackgroundColor="LightGray" Padding="10" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="52"/>
+                    </Grid.ColumnDefinitions>
+                    <Label VerticalTextAlignment="Center" Grid.Column="0" Text="Last name" FontAttributes="Bold" />
+                    <Label VerticalTextAlignment="Center" Grid.Column="1" Text="First name" FontAttributes="Bold" />
+                    <Label VerticalTextAlignment="Center" Grid.Column="2" Text="Middle name" FontAttributes="Bold" />
+                    <Label VerticalTextAlignment="Center" Grid.Column="3"  FontAttributes="Bold" Text="Department number" />
+                    <Label VerticalTextAlignment="Center" Grid.Column="4"  FontAttributes="Bold" Text="Age" />
+                    <Label VerticalTextAlignment="Center" Grid.Column="5"  FontAttributes="Bold" Text="Academic Degree" />
+                    <Label VerticalTextAlignment="Center" Grid.Column="6"  FontAttributes="Bold" Text="Position" />
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid BackgroundColor="White"
+                              Margin="5"
+                              Padding="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition Width="52" />
+                                <ColumnDefinition Width="52"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Text="{Binding LastName}" />
+                            <Label Grid.Column="1" Text="{Binding FirstName}" />
+                            <Label Grid.Column="2" Text="{Binding MiddleName}" />
+                            <Label Grid.Column="3" Text="{Binding DepartmentNumber}" />
+                            <Label Grid.Column="4" Text="{Binding Age}" />
+                            <Label Grid.Column="5" Text="{Binding AcademicDegree}" />
+                            <Label Grid.Column="6" Text="{Binding Position}" />
+                            <Button Grid.Column="7" x:Name="btnEditResearcher" Image="img/edit.png" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding ShowEditCommand}" />
+                            <Button Grid.Column="8" x:Name="btnDeleteResearcher" Image="img/delete.png" BackgroundColor="Transparent" BorderColor="Transparent" Command="{Binding DeleteCommand}"/>
+
+                        </Grid>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
