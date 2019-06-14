@@ -53,3 +53,4 @@ protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 }
 ```
 Comparing to Entity Framework you don't have to modify config files for connection string so you basically just use `OnConfiguring()` method for it.
+
